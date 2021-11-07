@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>{% block title %}BikeStore{% endblock %}</title>
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        <link rel="icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;0,800;1,400;1,700;1,800&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/bb9e19a318.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <header>
+            <div class="menu-icon-container">
+                <i class="fas fa-bars fa-lg"></i>
+            </div>
+            <div class="logo-container">
+                <img class="logo" src="{% static 'img/logo.png' %}" />
+                <div>BikeStore</div>
+            </div>
+        </header>
+        <div class="content">
+            {% block content %}{% endblock %}
+        </div>
+    </body>
+</html>
