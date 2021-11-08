@@ -1,28 +1,66 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <title>{% block title %}BikeStore{% endblock %}</title>
-        <link rel="stylesheet" href="{% static 'css/base.css' %}">
-        <link rel="icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;0,800;1,400;1,700;1,800&display=swap" rel="stylesheet">
-        <script src="https://kit.fontawesome.com/bb9e19a318.js" crossorigin="anonymous"></script>
-    </head>
-    <body>
-        <header>
-            <div class="menu-icon-container">
-                <i class="fas fa-bars fa-lg"></i>
-            </div>
-            <div class="logo-container">
-                <img class="logo" src="{% static 'img/logo.png' %}" />
-                <div>BikeStore</div>
-            </div>
-        </header>
-        <div class="content">
-            {% block content %}{% endblock %}
+  <head>
+    <title>{% block title %}BikeStore{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+    <link
+      rel="icon"
+      href="{% static 'img/favicon.ico' %}"
+      type="image/x-icon"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;0,800;1,400;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/bb9e19a318.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <div class="menu-icon-container">
+        <i class="fas fa-bars fa-lg"></i>
+      </div>
+      <div class="logo-container">
+        <img class="logo" src="{% static 'img/logo.png' %}" />
+        <div>BikeStore</div>
+      </div>
+    </header>
+    <div class="content">{% block content %}{% endblock %}</div>
+    <footer>
+      <div class="internal-links">
+        <div class="link-wrapper">
+          <h3>Información útil</h3>
+          <a href="">Sobre nosotros</a>
+          <a href="">Política de privacidad</a>
+          <a href="">Ayuda</a>
+          <a href="">Contáctanos</a>
+          <a href="">Política de privacidad</a>
         </div>
-    </body>
+      </div>
+      <div class="icon-wrapper">
+        <div id="footer-border"></div>
+        <div class="social-media fa-2x">
+          <a href="instagram.com"><i class="fab fa-instagram"></i></a>
+          <a href="twitter.com"><i class="fab fa-twitter"></i></a>
+          <a href="facebook.com"><i class="fab fa-facebook"></i></a>
+        </div>
+        <div class="payment-methods fa-2x">
+          <i class="fab fa-cc-visa"></i>
+          <i class="fab fa-paypal"></i>
+          <i class="fab fa-apple-pay"></i>
+          <i class="fab fa-cc-mastercard"></i>
+        </div>
+      </div>
+      <h3 id="copyright-statement">
+        <i class="far fa-copyright"></i>2021 BikeStore todos los derechos
+        reservados
+      </h3>
+    </footer>
+  </body>
 </html>
