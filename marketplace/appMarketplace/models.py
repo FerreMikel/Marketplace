@@ -5,6 +5,7 @@ from django.db import models
 
 class Categoria(models.Model):
     nombre = models.CharField(max_length=50)
+    slug = models.SlugField(unique=True)
 
     def __str__(self):
         return self.nombre
@@ -15,6 +16,7 @@ class Fabricante(models.Model):
     descripcion = models.CharField(max_length=500)
     sitioWeb = models.URLField()
     logoURL = models.URLField()
+    slug = models.SlugField(unique=True)
 
     def __str__(self):
         return self.nombre
@@ -33,6 +35,7 @@ class Producto(models.Model):
     fabricante = models.ForeignKey(Fabricante, on_delete=models.CASCADE)
     precio = models.IntegerField()
     caracteristicas = models.ManyToManyField(Caracteristica)
+    slug = models.SlugField(unique=True)
 
     def __str__(self):
         return self.nombre
