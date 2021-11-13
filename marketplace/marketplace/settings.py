@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-o8q=nqfovxyagxile961parixenf-ix3se2x(c=wmuii^_a%q*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.1.38', '192.168.0.100']
 
 
 # Application definition
@@ -63,6 +63,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'appMarketplace.datos_base.categorias'
             ],
         },
     },

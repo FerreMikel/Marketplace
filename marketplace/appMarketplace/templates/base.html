@@ -20,17 +20,28 @@
       src="https://kit.fontawesome.com/bb9e19a318.js"
       crossorigin="anonymous"
     ></script>
+    {% block head %}{% endblock %}
   </head>
   <body>
     <header>
       <div class="menu-icon-container">
-        <i class="fas fa-bars fa-lg"></i>
+        <i id="menu-btn" class="fas fa-bars fa-lg"></i>
       </div>
-      <div class="logo-container">
+      <div class="logo-container" onclick="window.location = '/'">
         <img class="logo" src="{% static 'img/logo.png' %}" />
         <div>BikeStore</div>
       </div>
     </header>
+    <div id="menu-container">
+      <i id="menu-close-btn" class="fas fa-times fa-2x"></i>
+      <h2>Categorías</h2>
+      <ul>
+        {% for categoria in categorias %}
+            <li><a href="/categorias/{{categoria.slug}}">{{ categoria.nombre }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    <script src="{% static 'js/menu.js' %}"></script>
     <div class="content">{% block content %}{% endblock %}</div>
     <footer>
       <div class="internal-links">

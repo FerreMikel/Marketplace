@@ -46,4 +46,4 @@ class Imagen(models.Model):
     url = models.URLField()
 
     def __str__(self):
-        return self.producto
+        return self.producto.nombre

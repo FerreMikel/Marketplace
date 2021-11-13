@@ -1,5 +1,72 @@
 {% extends "base.html" %}
+
+{% load static %}
+
 {% block title %}{{producto.nombre}}{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/product.css' %}" />
+{% endblock %}
+
 {% block content %}
-<h1>{{producto.nombre}}</h1>
+    
+    <div class="grid-view">
+        <div class="image-carousel">
+            <div id="carousel-selected"></div>
+            <div class="carousel-thumnails">
+                {% for image in imagenes %}
+                    <img src="{{ image.url }}" class="carousel-thumbnail"/>
+                {% endfor %}
+            </div>  
+        </div>
+        <script src="{% static 'js/slide.js' %}"></script>
+        <div class="product-info">
+            <div class="categoria-producto">{{producto.categoria.nombre}}</div>
+            <h1>{{producto.fabricante.nombre}} {{producto.nombre}}</h1>
+            <h3>Precio: {{producto.precio}},00 €</h3>
+            <ul class="caracteristicas-wrapper">
+                <h4>Características</h4>
+                <div class="caracteristicas-items">
+                    {% for caracteristica in caracteristicas %}
+                        <li>{{caracteristica.nombre}}</li>
+                    {% endfor %}
+                </div>
+            </ul>
+            <div class="fabricante">
+                <div class="fab-logo-wrapper">
+                    <h4>El fabricante</h4>
+                    <img src="{{producto.fabricante.logoURL}}" alt="Trek bycicles">
+                </div>
+                <span><b>Sitio web</b> <a target="_blank" href="{{producto.fabricante.sitioWeb}}">{{producto.fabricante.sitioWeb}}</a></span>
+                <p>{{producto.fabricante.descripcion}}</p>
+                
+            </div>
+            <div class="buy">
+                <div class="select-wrapper">
+                    <div class="size-wrapper">
+                        <span>Talla</span>
+                        <select name="Talla" id="talla-select">
+                            <option  type="select" disabled="disabled" value="">Por favor, selecciona</option>
+                            <option  type="select" value="S">S</option>
+                            <option  type="select" value="M">M</option>
+                            <option  type="select" value="L">L</option>
+                        </select>
+                    </div>
+                    <div class="qty-wrapper">
+                        <span>Cantidad</span>
+                        <select name="cantidad" id="cantidad-select">
+                            <option disabled="disabled" value="">Cantidad</option>
+                            <option  type="select" value="1">1</option>
+                            <option  type="select" value="2">2</option>
+                            <option  type="select" value="3">3</option>
+                            <option  type="select" value="4">4</option>
+                            <option  type="select" value="5">5</option>
+                            <option  type="select" value="6">6</option>
+                        </select>
+                    </div>
+                </div>
+                <button disabled>Añadir al carrito</button>
+            </div>
+        </div>
+    </div>
 {% endblock %}
