@@ -1,5 +1,32 @@
 {% extends "base.html" %}
+
+{% load static %}
+
 {% block title %}Categorías{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/categories.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/category.css' %}" />
+{% endblock %}
 {% block content %}
 <h1>Categorías</h1>
+    {% for categoria in categorias %}
+        <div class="nombre-wrapper">
+            <h2 class="nombre">{{categoria.nombre}}</h2>
+                <a href="/categorias/{{categoria.slug}}">Ver más ></a>
+        </div>
+        <div class="grid-productos">
+            {% for producto in categoria.productos %}
+                <div class="ficha-producto">
+                    <a href="/{{producto.fabricante.slug}}/{{producto.slug}}"> 
+                        <div class="imagen-producto" style="background-image: url('{{producto.imagen.url}}');"></div>
+                        <div class="info-wrapper">
+                            <span class="nombre-producto"><b>{{producto.fabricante.nombre}} {{producto.nombre}}</b></span>
+                            <span class="precio-producto">{{producto.precio}},00 €</span>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    {% endfor %}
 {% endblock %}

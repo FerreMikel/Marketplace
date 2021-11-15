@@ -1,0 +1,31 @@
+/* MOBILE */
+
+.nombre-wrapper{
+    margin-top: 3em;
+    margin-bottom: 1.5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nombre-wrapper h2 {
+    margin: 0
+}
+
+.nombre-wrapper a{
+    text-decoration: none;
+    color: #000;
+}
+.nombre-wrapper a:hover{
+    font-weight: bold;
+}
+
+.grid-productos{
+    margin-bottom: 1em;
+}
+
+/* DESKTOP */
+@media only screen and (min-width: 768px) {
+    
+}

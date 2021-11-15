@@ -24,7 +24,11 @@ class ProductoV(View):
 class CategoriaV(View):
     def get(self, request, slug_categoria):
         categoria = get_object_or_404(Categoria, slug=slug_categoria)
-        return render(request, 'category.html', {'categoria': categoria})
+        productos = get_list_or_404(Producto, categoria=categoria.pk)
+        for producto in productos:
+            imagenes = Imagen.objects.filter(producto=producto.pk).all()
+            producto.imagen = imagenes.first()
+        return render(request, 'category.html', {'categoria': categoria, 'productos': productos})
 
 
 class FabricanteV(View):
@@ -36,4 +40,11 @@ class FabricanteV(View):
 class Categorias(View):
     def get(self, request):
         categorias = get_list_or_404(Categoria)
+        for categoria in categorias:
+            productos = Producto.objects.filter(
+                categoria=categoria.pk).all()[:4]
+            for producto in productos:
+                producto.imagen = (Imagen.objects.filter(
+                    producto=producto.pk).all()).first()
+            categoria.productos = productos
         return render(request, 'categories.html', {'categorias': categorias})

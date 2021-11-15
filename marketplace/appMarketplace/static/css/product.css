@@ -34,12 +34,13 @@
 }
 .product-info{
     margin-left: 2em;
-    padding: 5em 1em;
+    padding: 2em 1em;
 }
 .product-info h1{
     font-size: 300%;
     padding: 0;
-    margin: 0;
+    margin: 0.5em 0;
+    line-height: 0.95;
 }
 .categoria-producto {
     background-color: var(--primary-color);
@@ -47,6 +48,7 @@
     width: fit-content;
     margin-bottom: 1em;
     padding: 5px 10px;
+    text-decoration: none;
 }
 .caracteristicas-wrapper{
     padding: 0;
@@ -72,19 +74,21 @@
 }
 .fabricante h4{
   font-size: larger;
+  margin: 0 1em 0 0;
 }
 .fabricante img{
-  max-height: 3em;
-  margin-top: 1em;
-  margin-left: 1.5em;
+  width: 100%;
+  margin: 1em 0;
 }
 .fab-logo-wrapper{
   display: flex;
   flex-wrap: wrap;
-  vertical-align: middle;
+  align-items: center;
+  margin-bottom: 1em;
 }
 .fabricante a{
   text-decoration: none;
+  width: 30%;
 }
 .fabricante p{
   text-align: justify;
@@ -119,28 +123,20 @@ button{
 }
 
 
-
-
-
   /* DESKTOP */
   
-  @media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) {
     .grid-view {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-    .fabricante img{
-      max-height: 4em;
-      margin-top: 0.5em;
     }
     select{
       width: 15em;
     }
     .qty-wrapper {
-      margin-left: -6em;
+      margin-left: -4em;
     }
     button{
       width: 15em;
     }
 
-  }
-  
+}  

@@ -43,22 +43,26 @@ header {
   display: none;
   backdrop-filter: saturate(180%) blur(10px);
   overflow-y: auto;
+  flex-direction: column;
+}
+#menu-container h2 {
+  margin-top: 0;
+}
+.categories-wrapper {
+  margin: 2em 0 0 0;
 }
 #menu-container ul {
   list-style-type: none;
   padding: 0;
 }
-
 #menu-container li {
   margin-bottom: 0.2em;
   font-size: xxx-large;
 }
-
 #menu-container a {
   text-decoration: none;
   color: #000
 }
-
 #menu-container a:hover {
   font-weight: bold;
 }
@@ -163,6 +167,10 @@ footer {
 
   #menu-container {
     padding: 50px;
+    flex-direction: row;
+  }
+  .categories-wrapper {
+    margin: 0 0 0 2em;
   }
 
 }

@@ -34,12 +34,14 @@
     </header>
     <div id="menu-container">
       <i id="menu-close-btn" class="fas fa-times fa-2x"></i>
-      <h2>Categorías</h2>
-      <ul>
-        {% for categoria in categorias %}
-            <li><a href="/categorias/{{categoria.slug}}">{{ categoria.nombre }}</a></li>
-        {% endfor %}
-      </ul>
+      <div class="categories-wrapper">
+        <a href="/categorias"><h2>Categorías</h2></a>
+        <ul>
+          {% for categoria in categorias %}
+              <li><a href="/categorias/{{categoria.slug}}">{{ categoria.nombre }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
     </div>
     <script src="{% static 'js/menu.js' %}"></script>
     <div class="content">{% block content %}{% endblock %}</div>

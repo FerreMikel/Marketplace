@@ -1,0 +1,52 @@
+/* MOBILE */
+h1 {
+    margin-bottom: 2em;
+}
+h1 a {
+    font-weight: normal;
+    text-decoration: none;
+    color: #000;
+}
+.grid-productos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-column-gap: 1em;
+    grid-row-gap: 1em;
+}
+
+.ficha-producto{
+    background-color: white;
+    padding: 1.5em;
+    width: 100%;
+    transition: all 150ms ease-in;
+    
+}
+.ficha-producto:hover {
+    box-shadow: -2px 5px 20px 0px rgba(110, 110, 110, 0.5);
+    transform: scale(1.025);
+}
+.ficha-producto a{
+    text-decoration: none;
+    color: #000;
+}
+.imagen-producto {
+    width: 100%;
+    padding-top: 70%;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.info-wrapper{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 1em;
+}
+/* DESKTOP */
+@media only screen and (min-width: 768px) {
+    .grid-productos {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-column-gap: 2em;
+        grid-row-gap: 2em;
+    }
+}

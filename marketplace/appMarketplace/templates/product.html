@@ -21,7 +21,7 @@
         </div>
         <script src="{% static 'js/slide.js' %}"></script>
         <div class="product-info">
-            <div class="categoria-producto">{{producto.categoria.nombre}}</div>
+            <a href="/categorias/{{producto.categoria.slug}}" class="categoria-producto">{{producto.categoria.nombre}}</a>
             <h1>{{producto.fabricante.nombre}} {{producto.nombre}}</h1>
             <h3>Precio: {{producto.precio}},00 €</h3>
             <ul class="caracteristicas-wrapper">
@@ -35,7 +35,7 @@
             <div class="fabricante">
                 <div class="fab-logo-wrapper">
                     <h4>El fabricante</h4>
-                    <img src="{{producto.fabricante.logoURL}}" alt="Trek bycicles">
+                    <a href="/{{producto.fabricante.slug}}"><img src="{{producto.fabricante.logoURL}}" alt=""></a>
                 </div>
                 <span><b>Sitio web</b> <a target="_blank" href="{{producto.fabricante.sitioWeb}}">{{producto.fabricante.sitioWeb}}</a></span>
                 <p>{{producto.fabricante.descripcion}}</p>
