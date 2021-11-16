@@ -1,5 +1,6 @@
 from django.shortcuts import get_list_or_404, get_object_or_404, render
 from django.views import View
+from django.http import Http404
 from .models import Caracteristica, Categoria, Producto, Fabricante, Imagen
 
 # Create your views here.
@@ -24,17 +25,25 @@ class ProductoV(View):
 class CategoriaV(View):
     def get(self, request, slug_categoria):
         categoria = get_object_or_404(Categoria, slug=slug_categoria)
-        productos = get_list_or_404(Producto, categoria=categoria.pk)
-        for producto in productos:
-            imagenes = Imagen.objects.filter(producto=producto.pk).all()
-            producto.imagen = imagenes.first()
+        try:
+            productos = get_list_or_404(Producto, categoria=categoria.pk)
+            for producto in productos:
+                imagenes = Imagen.objects.filter(producto=producto.pk).all()
+                producto.imagen = imagenes.first()
+        except Http404:
+            productos = None
         return render(request, 'category.html', {'categoria': categoria, 'productos': productos})
 
 
 class FabricanteV(View):
     def get(self, request, slug_fabricante):
         fabricante = get_object_or_404(Fabricante, slug=slug_fabricante)
-        return render(request, 'manufacturer.html', {'fabricante': fabricante})
+
+        productos = get_list_or_404(Producto, fabricante=fabricante.pk)
+        for producto in productos:
+            imagenes = Imagen.objects.filter(producto=producto.pk).all()
+            producto.imagen = imagenes.first()
+        return render(request, 'manufacturer.html', {'fabricante': fabricante, 'productos': productos})
 
 
 class Categorias(View):

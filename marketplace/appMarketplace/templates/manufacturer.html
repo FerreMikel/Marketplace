@@ -1,5 +1,35 @@
 {% extends "base.html" %}
+
+{% load static %}
+
 {% block title %}{{fabricante.nombre}}{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/category.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/manufacturer.css' %}" />
+{% endblock %}
+
 {% block content %}
-<h1>{{fabricante.nombre}}</h1>
+    <div class="grid-fabricante">
+        <div class="info-fabricante">
+            <img src="{{fabricante.logoURL}}" />
+            <p>{{fabricante.descripcion}}</p>
+            <button class="default-btn" onclick="window.open('{{fabricante.sitioWeb}}', '_blank').focus()">Visitar sitio web</button>
+        </div>
+        {% if productos %}
+            <div class="grid-productos">
+                {% for producto in productos %}
+                    <div class="ficha-producto">
+                        <a href="/{{producto.fabricante.slug}}/{{producto.slug}}"> 
+                            <div class="imagen-producto" style="background-image: url('{{producto.imagen.url}}');"></div>
+                            <div class="info-wrapper">
+                                <span class="nombre-producto"><b>{{producto.fabricante.nombre}} {{producto.nombre}}</b></span>
+                                <span class="precio-producto">{{producto.precio}},00 €</span>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
 {% endblock %}

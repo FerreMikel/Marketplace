@@ -42,9 +42,17 @@
           {% endfor %}
         </ul>
       </div>
+      <div class="fabricantes-wrapper">
+        <h2>Fabricantes</h2>
+        <ul>
+          {% for fabricante in fabricantes %}
+              <li><a href="/{{fabricante.slug}}">{{ fabricante.nombre }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
     </div>
     <script src="{% static 'js/menu.js' %}"></script>
-    <div class="content">{% block content %}{% endblock %}</div>
+    <div class="content" id="a">{% block content %}{% endblock %}</div>
     <footer>
       <div class="internal-links">
         <div class="link-wrapper">
@@ -59,11 +67,9 @@
       <div class="icon-wrapper">
         <div id="footer-border"></div>
         <div class="social-media fa-2x">
-          <a href="https://www.instagram.com"
-            ><i class="fab fa-instagram"></i
-          ></a>
-          <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
-          <a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
         </div>
         <div class="payment-methods fa-2x">
           <i class="fab fa-cc-visa"></i>

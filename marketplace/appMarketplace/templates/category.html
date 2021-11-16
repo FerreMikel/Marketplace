@@ -12,7 +12,7 @@
 <h1><a href="/categorias">Categorías > </a> {{categoria.nombre}}</h1>
 <div class="grid-productos">
 {% for producto in productos %}
-    <div class="ficha-producto"> <!-- La ficha de cada uno sale aqui o crep-->
+    <div class="ficha-producto">
         <a href="/{{producto.fabricante.slug}}/{{producto.slug}}"> 
             <div class="imagen-producto" style="background-image: url('{{producto.imagen.url}}');"></div>
             <div class="info-wrapper">

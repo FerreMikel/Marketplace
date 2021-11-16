@@ -1,0 +1,36 @@
+/* MOBILE */
+.grid-fabricante {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 1.5em;
+}
+
+.info-fabricante {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+}
+
+.info-fabricante img {
+    width: 80%;
+    margin-bottom: 1em;
+}
+
+.default-btn {
+    background: var(--primary-color);
+      color: #fff;
+      border: none;
+      padding: 2em;
+  }
+
+/* DESKTOP */
+@media only screen and (min-width: 768px) {
+    .grid-fabricante {
+        grid-template-columns: 1fr 3fr !important;
+        grid-column-gap: 3em;
+    }
+    .grid-productos {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    }
+}
