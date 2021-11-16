@@ -25,21 +25,17 @@ class ProductoV(View):
 class CategoriaV(View):
     def get(self, request, slug_categoria):
         categoria = get_object_or_404(Categoria, slug=slug_categoria)
-        try:
-            productos = get_list_or_404(Producto, categoria=categoria.pk)
-            for producto in productos:
-                imagenes = Imagen.objects.filter(producto=producto.pk).all()
-                producto.imagen = imagenes.first()
-        except Http404:
-            productos = None
+        productos = Producto.objects.filter(categoria=categoria.pk).all()
+        for producto in productos:
+            imagenes = Imagen.objects.filter(producto=producto.pk).all()
+            producto.imagen = imagenes.first()
         return render(request, 'category.html', {'categoria': categoria, 'productos': productos})
 
 
 class FabricanteV(View):
     def get(self, request, slug_fabricante):
         fabricante = get_object_or_404(Fabricante, slug=slug_fabricante)
-
-        productos = get_list_or_404(Producto, fabricante=fabricante.pk)
+        productos = Producto.objects.filter(fabricante=fabricante.pk).all()
         for producto in productos:
             imagenes = Imagen.objects.filter(producto=producto.pk).all()
             producto.imagen = imagenes.first()

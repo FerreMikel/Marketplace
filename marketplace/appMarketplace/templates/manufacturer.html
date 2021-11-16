@@ -14,9 +14,11 @@
         <div class="info-fabricante">
             <img src="{{fabricante.logoURL}}" />
             <p>{{fabricante.descripcion}}</p>
-            <button class="default-btn" onclick="window.open('{{fabricante.sitioWeb}}', '_blank').focus()">Visitar sitio web</button>
+            <button class="visitar-web" onclick="window.open('{{fabricante.sitioWeb}}', '_blank').focus()">Visitar sitio web <i class="fas fa-external-link-alt"></i></button>
         </div>
-        {% if productos %}
+        {% if not productos %}
+           <span id="mensajito">Estamos trabajando para traeros los productos de {{fabricante.nombre}} lo antes posible.</span>
+        {% else %}
             <div class="grid-productos">
                 {% for producto in productos %}
                     <div class="ficha-producto">
