@@ -1,5 +1,23 @@
 {% extends "base.html" %}
 
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+{% endblock %}
+
 {% block content %}
-<h1>Inicio</h1>
+
+
+
+    <div class="banner">
+        <h1>Orbea Ebike Wild FS</h1>
+        <p>Take back your wild.<p>
+        <button><a href="/orbea/ebike-wild">VER LA BICICLETA</a></button>
+    </div>
+
+
+
+
+
+
 {% endblock %}
