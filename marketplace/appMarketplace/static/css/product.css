@@ -1,121 +1,142 @@
 .grid-view {
-    display: grid;
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-    grid-column-gap: 3em;
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  grid-column-gap: 3em;
 }
+
 .image-carousel {
-    width: 100%
+  width: 100%
 }
+
 #carousel-selected {
-    width: 100%;
-    padding-top: 70%;
-    background-image: none;
-    background-size: cover;
-    background-position: center;
+  width: 100%;
+  padding-top: 70%;
+  background-image: none;
+  background-size: cover;
+  background-position: center;
 }
+
 .carousel-thumnails {
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
-    overflow-x: auto;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    margin-top: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  overflow-x: auto;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin-top: 1em;
 }
 
 .carousel-thumbnail {
-    height: 100px;
-    opacity: 0.7;
-    transition: opacity 200ms ease-in;
+  height: 100px;
+  opacity: 0.7;
+  transition: opacity 200ms ease-in;
 }
 
 .active-thumbnail {
-    opacity: 1;
-}
-.product-info{
-    margin-left: 2em;
-    padding: 2em 1em;
-}
-.product-info h1{
-    font-size: 300%;
-    padding: 0;
-    margin: 0.5em 0;
-    line-height: 0.95;
-}
-.categoria-producto {
-    background-color: var(--primary-color);
-    color: #fff;
-    width: fit-content;
-    margin-bottom: 1em;
-    padding: 5px 10px;
-    text-decoration: none;
-}
-.caracteristicas-wrapper{
-    padding: 0;
-    margin: 0;
-}
-.caracteristicas-items {
-    list-style-type: none;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0;
-    width: 70%
-}
-.caracteristicas-items li{
-    background-color: #ddde;
-    width: fit-content;
-    margin: 0.5em;
-    padding: 6px;
-    font-size: smaller;
+  opacity: 1;
 }
 
-.fabricante{
+.product-info {
+  margin-left: 2em;
+  padding: 2em 1em;
+}
+
+.product-info h1 {
+  font-size: 300%;
+  padding: 0;
+  margin: 0.5em 0;
+  line-height: 0.95;
+}
+
+.categoria-producto {
+  background-color: var(--primary-color);
+  color: #fff;
+  width: fit-content;
+  margin-bottom: 1em;
+  padding: 5px 10px;
+  text-decoration: none;
+}
+
+.caracteristicas-wrapper {
+  padding: 0;
+  margin: 0;
+}
+
+.caracteristicas-items {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  width: 70%
+}
+
+.caracteristicas-items li {
+  background-color: #ddde;
+  width: fit-content;
+  margin: 0.5em;
+  padding: 6px;
+  font-size: smaller;
+}
+
+.fabricante {
   margin-top: 2em;
 }
-.fabricante h4{
+
+.fabricante h4 {
   font-size: larger;
   margin: 0 1em 0 0;
 }
-.fabricante img{
+
+.fabricante img {
   width: 100%;
   margin: 1em 0;
 }
-.fab-logo-wrapper{
+
+.fab-logo-wrapper {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   margin-bottom: 1em;
 }
-.fabricante a{
+
+.fabricante a {
   text-decoration: none;
   width: 30%;
 }
-.fabricante p{
+
+.fabricante p {
   text-align: justify;
   margin-right: 1.5em;
   max-width: 55ch;
 }
-.buy{
+
+.buy {
   display: grid;
+
 }
-.select-wrapper{
+
+.select-wrapper {
   display: flex;
   flex-wrap: wrap;
   vertical-align: middle;
 
 }
-.qty-wrapper, .size-wrapper{
-  display:grid;
-  
-  width: 45%;
+
+.qty-wrapper,
+.size-wrapper {
+
+  flex: 0 1 45%;
+  margin: 0.5em;
 }
-select{
+
+select {
   width: 10em;
   height: 2em;
   border: 1px solid #ddde;
   font-family: "Poppins", sans-serif;
 }
-button{
+
+button {
   width: 10em;
   height: 3em;
   margin-top: 1em;
@@ -123,20 +144,24 @@ button{
 }
 
 
-  /* DESKTOP */
-  
-@media only screen and (min-width: 768px) {
-    .grid-view {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-    select{
-      width: 15em;
-    }
-    .qty-wrapper {
-      margin-left: -4em;
-    }
-    button{
-      width: 15em;
-    }
+/* DESKTOP */
 
-}  
+@media only screen and (min-width: 768px) {
+  .grid-view {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  select {
+    width: 15em;
+  }
+
+  .size-wrapper,
+  .qty-wrapper {
+    display: grid;
+  }
+
+  button {
+    width: 15em;
+  }
+
+}

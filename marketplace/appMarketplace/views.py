@@ -8,7 +8,28 @@ from .models import Caracteristica, Categoria, Producto, Fabricante, Imagen
 
 class Inicio(View):
     def get(self, request):
-        return render(request, 'index.html')
+        indexContent = [{
+            'title': "Orbea Ebike Wild FS",
+            'subtitle': "Take back your wild.",
+            'bgImageUrl': "https://www.todomountainbike.net/images/articles/2019/orbea-wild-fs-2020.jpg",
+            'actionBtn': "VER BICICLETA",
+            'link': "/orbea/ebike-wild"
+        },
+            {
+            'title': "Trek",
+            'subtitle': "Relentless progression",
+            'bgImageUrl': "https://trek.scene7.com/is/image/TrekBicycleProducts/Carbon_Tech_Mold_16x9?$responsive-pjpg$&cache=on,on&wid=1920&hei=1440&fit=constrain,1",
+            'actionBtn': "VER FABRICANTE",
+            'link': "/trek"
+        },
+            {
+            'title': "Niños",
+            'subtitle': "Disfruta de la bici en familia",
+            'bgImageUrl': "https://www.orbea.com/img/products/imagenes-menu/context-kids.jpg",
+            'actionBtn': "VER CATEGORÍA",
+            'link': "/categorias/ninos"
+        }]
+        return render(request, 'index.html', {'indexContent': indexContent})
 
 
 class ProductoV(View):

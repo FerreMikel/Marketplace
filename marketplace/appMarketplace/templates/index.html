@@ -6,18 +6,14 @@
 {% endblock %}
 
 {% block content %}
-
-
-
-    <div class="banner">
-        <h1>Orbea Ebike Wild FS</h1>
-        <p>Take back your wild.<p>
-        <button><a href="/orbea/ebike-wild">VER LA BICICLETA</a></button>
-    </div>
-
-
-
-
-
+{% for item in indexContent %}
+    <section class="home-section" style="background-image: url('{{item.bgImageUrl}}');">
+        <div class="section-card">
+            <h1>{{item.title}}</h1>
+            <p>{{item.subtitle}}<p>
+            <button><a href="{{item.link}}">{{item.actionBtn}}</a></button>
+        </div>
+    </section>
+{% endfor %}
 
 {% endblock %}
