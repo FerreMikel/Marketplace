@@ -11,14 +11,14 @@ The "Marketplace" project implements a web site in which different bikes are cla
 - [x] Visualizar la lista de categorias, que además permita ir a otra vista para ver la lista de bicicletas de las mismas.
 - [x] Visualizar la lista de fabricantes, que además permita ir a otra vista para ver los detalles de un fabricante, incluida la lista de bicicletas del mismo.
 
-## [E3]: Django (funcionalidades añadidas)
+## [E3] Django (funcionalidades añadidas)
 
 [0,0 - 2,0 puntos] Implementar en el proyecto de Django AL MENOS UNA de las opciones propuestas sobre funcionalidades añadidas en E3a.
 
-- [] Opción 1 (1,50 puntos): Interacción enriquecida en el cliente con JavaScript (eventos, efectos, ajax) y sus librerías o frameworks.
-- [] Opción 2 (0,75 puntos): Uso de vistas basadas en clases.
-- [] Opción 3 (0,75 puntos): Uso de formularios en la aplicación pública.
-- [] Opción 4 (0,50 puntos): Personalizar la aplicación de administración, dando soporte a varios roles de usuarios administradores con diferentes permisos.
-- [] Opción 5 (0,50 puntos): Carga de datos iniciales para la aplicación (todas las entidades).
-- [] Opción 6 (0,50 puntos): Multilingüismo - i18n (traducir algunas partes estáticas de las plantillas a otro idioma y activar esta funcionalidad en las URLs del proyecto).
-- [] Opción 7 (0,50 puntos): Incluir mejoras de rendimiento y comprobaciones de seguridad (escanear posibles vulnerabilidades y corregir lo que se pueda).
+- [ ] Opción 1 (1,50 puntos): Interacción enriquecida en el cliente con JavaScript (eventos, efectos, ajax) y sus librerías o frameworks.
+- [ ] Opción 2 (0,75 puntos): Uso de vistas basadas en clases.
+- [ ] Opción 3 (0,75 puntos): Uso de formularios en la aplicación pública.
+- [ ] Opción 4 (0,50 puntos): Personalizar la aplicación de administración, dando soporte a varios roles de usuarios administradores con diferentes permisos.
+- [ ] Opción 5 (0,50 puntos): Carga de datos iniciales para la aplicación (todas las entidades).
+- [ ] Opción 6 (0,50 puntos): Multilingüismo - i18n (traducir algunas partes estáticas de las plantillas a otro idioma y activar esta funcionalidad en las URLs del proyecto).
+- [ ] Opción 7 (0,50 puntos): Incluir mejoras de rendimiento y comprobaciones de seguridad (escanear posibles vulnerabilidades y corregir lo que se pueda).
