@@ -33,7 +33,7 @@ class Producto(models.Model):
     nombre = models.CharField(max_length=60)
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
     fabricante = models.ForeignKey(Fabricante, on_delete=models.CASCADE)
-    precio = models.IntegerField()
+    precio = models.FloatField()
     caracteristicas = models.ManyToManyField(Caracteristica)
     slug = models.SlugField(unique=True)
 
@@ -51,7 +51,7 @@ class Imagen(models.Model):
 
 class Valoracion(models.Model):
     producto =  models.ForeignKey(Producto, on_delete=models.CASCADE)
-    estrellas = models.FloatField()
+    estrellas = models.IntegerField()
     username = models.CharField(max_length=30)
     texto = models.CharField(max_length=250)
 
