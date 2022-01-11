@@ -67,6 +67,20 @@
                 </div>
                 <button disabled>Añadir al carrito</button>
             </div>
+            <div class="opinions-all">
+                <div class="form">
+
+                </div>
+                
+                {% for valoracion in valoraciones%}
+                    <div class="customer-opinions">
+                        <h4>{{valoracion.username}}</h4>
+                        <div class="stars">
+                            
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
         </div>
     </div>
 {% endblock %}

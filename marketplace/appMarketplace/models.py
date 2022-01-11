@@ -47,3 +47,13 @@ class Imagen(models.Model):
 
     def __str__(self):
         return self.producto.nombre
+
+
+class Valoracion(models.Model):
+    producto =  models.ForeignKey(Producto, on_delete=models.CASCADE)
+    estrellas = models.FloatField()
+    username = models.CharField(max_length=30)
+    texto = models.CharField(max_length=250)
+
+    def __str__(self):
+        return self.producto.nombre

@@ -1,7 +1,7 @@
 from django.shortcuts import get_list_or_404, get_object_or_404, render
 from django.views import View
 from django.http import Http404
-from .models import Caracteristica, Categoria, Producto, Fabricante, Imagen
+from .models import Caracteristica, Categoria, Producto, Fabricante, Imagen, Valoracion
 
 # Create your views here.
 
@@ -40,7 +40,8 @@ class ProductoV(View):
         imagenes = Imagen.objects.filter(producto=producto.pk).all()
         caracteristicas = Caracteristica.objects.filter(
             producto=producto.pk).all()
-        return render(request, 'product.html', {'producto': producto, 'imagenes': imagenes, 'caracteristicas': caracteristicas})
+        valoraciones = Valoracion.objects.filter(producto = producto.pk).all()
+        return render(request, 'product.html', {'producto': producto, 'imagenes': imagenes, 'caracteristicas': caracteristicas,'valoraciones': valoraciones})
 
 
 class CategoriaV(View):
