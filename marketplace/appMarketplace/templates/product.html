@@ -83,14 +83,20 @@
                             <input class="rating__input" name="rating3" id="rating3-4" value="4" type="radio">
                             <label aria-label="5 stars" class="rating__label" for="rating3-5"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
                             <input class="rating__input" name="rating3" id="rating3-5" value="5" type="radio">
+                            <script>console.log(document.getElementsByClassName('rating__input')[3].value)</script>
                         </div>
                     </div>
-                    <form action="#">
+                    <form method="POST">
+                        {% csrf_token %}
+                        
+                        {{form}}<!-- 
                         <label for="username">Nombre de usuario:</label><br>
-                        <input type="text" id="username" name="username"><br>
-                        <textarea rows="6" cols="40" id="comment" placeholder="Escribe aquí tu comentario"></textarea>
+                        <input type="text" id="username" name="username" value="{{ valoracion.username }}"><br>
+                        <textarea rows="6" cols="40" id="comment" placeholder="Escribe aquí tu comentario"></textarea> -->
+                        <button type="submit">Enviar</button>
                     </form>
-                    <button>Enviar</button>
+                    
+                    
                 </div>
                 
                 {% for valoracion in valoraciones%}

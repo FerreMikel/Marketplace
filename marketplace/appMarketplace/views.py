@@ -1,7 +1,10 @@
+
 from django.shortcuts import get_list_or_404, get_object_or_404, render
 from django.views import View
 from django.http import Http404
 from .models import Caracteristica, Categoria, Producto, Fabricante, Imagen, Valoracion
+from .forms import ValoracionForm
+from django.http import HttpResponse
 
 # Create your views here.
 
@@ -33,6 +36,32 @@ class Inicio(View):
 
 
 class ProductoV(View):
+    def post(self, request, slug_fabricante, slug_producto):
+        fabricante = get_object_or_404(Fabricante, slug=slug_fabricante)
+        producto = get_object_or_404(
+            Producto, slug=slug_producto, fabricante=fabricante.pk)
+        imagenes = Imagen.objects.filter(producto=producto.pk).all()
+        caracteristicas = Caracteristica.objects.filter(
+            producto=producto.pk).all()
+        valoraciones = Valoracion.objects.filter(producto = producto.pk).all()
+        if(Valoracion.objects.filter(producto = producto.pk).exists()):
+            valoracionId = Valoracion.objects.filter(producto = producto.pk).all().last().pk
+        else:
+            valoracionId = Valoracion.objects.all().last().pk
+            ##Valoracion.objects.all().last.pk
+        
+        form = ValoracionForm(request.POST)
+        if(form.is_valid()):
+            username = form.cleaned_data['username']
+            comentario = form.cleaned_data['texto']
+            estrellas = 5
+            productoPk = producto.pk
+            val = Valoracion(valoracionId+1 ,productoPk, estrellas, username, comentario)
+            val.save()           
+        
+        return render(request, 'product.html',  {'producto': producto, 'imagenes': imagenes, 'caracteristicas': caracteristicas,'valoraciones': valoraciones, 'form': form})
+        
+
     def get(self, request, slug_fabricante, slug_producto):
         fabricante = get_object_or_404(Fabricante, slug=slug_fabricante)
         producto = get_object_or_404(
@@ -41,7 +70,11 @@ class ProductoV(View):
         caracteristicas = Caracteristica.objects.filter(
             producto=producto.pk).all()
         valoraciones = Valoracion.objects.filter(producto = producto.pk).all()
-        return render(request, 'product.html', {'producto': producto, 'imagenes': imagenes, 'caracteristicas': caracteristicas,'valoraciones': valoraciones})
+        form = ValoracionForm()
+        
+        return render(request, 'product.html', {'producto': producto, 'imagenes': imagenes, 'caracteristicas': caracteristicas,'valoraciones': valoraciones, 'form': form})
+   
+            
 
 
 class CategoriaV(View):
