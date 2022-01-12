@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
   grid-column-gap: 3em;
+  height: 100%;
 }
 
 .image-carousel {
@@ -143,6 +144,8 @@ button {
   font-family: "Poppins", sans-serif;
 }
 
+
+
 /* STAR RATING */
 .rating-group {
   display: inline-flex;
@@ -194,11 +197,15 @@ button {
 
 
 /*FORM*/
+.form{
+  padding-left: 1em;
+}
 .myForm{
   border-radius: 0;
   border: 1px solid #ddde;
   font-family: "Poppins", sans-serif;
   display: grid;
+  
 }
 .nameArea, .myTextArea{
   margin-top: 1em;
@@ -229,6 +236,9 @@ button {
   visibility: hidden;
 }
 
+.customer-opinions{
+  padding-left: 1em;
+}
 /* DESKTOP */
 
 @media only screen and (min-width: 768px) {
@@ -249,8 +259,15 @@ button {
     width: 15em;
   }
 
-  
-
+  .opinions-all{
+    margin-left: auto;
+    display: grid;
+    grid-template-columns: minmax(150px, 45%) 1fr;    
+    grid-column-gap: 7em;
+  }
+  .opinion-wrapper{
+    max-width:480px ;
+  }
   
 
 }

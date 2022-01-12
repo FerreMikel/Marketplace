@@ -54,13 +54,10 @@ class ProductoV(View):
         if(form.is_valid()):
             username = form.cleaned_data['username']
             comentario = form.cleaned_data['texto']
-            
             estrellas = form.cleaned_data['estrellas']
             productoPk = producto.pk
             val = Valoracion(valoracionId+1 ,productoPk, estrellas, username, comentario)
             val.save()       
-                
-        
         return render(request, 'product.html',  {'producto': producto, 'imagenes': imagenes, 'caracteristicas': caracteristicas,'valoraciones': valoraciones, 'form': form})
         
 
