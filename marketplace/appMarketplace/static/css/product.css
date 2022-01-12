@@ -191,6 +191,8 @@ button {
   color: #ddd;
 }
 
+
+
 /*FORM*/
 .myForm{
   border-radius: 0;
@@ -221,7 +223,11 @@ button {
 .name-star-wrapper h4{
   margin-right: 1em;
 }
-
+#starPoints{
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
 
 /* DESKTOP */
 
@@ -242,5 +248,9 @@ button {
   button {
     width: 15em;
   }
+
+  
+
+  
 
 }

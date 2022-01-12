@@ -7,14 +7,16 @@ from django.utils.translation import ugettext_lazy as _
 class ValoracionForm(forms.ModelForm):
     class Meta:
         model = Valoracion
-        fields = ['username', 'texto']
+        fields = ['username', 'texto', 'estrellas']
         widgets = {
             'username' : forms.TextInput(attrs={'placeholder' : 'Nombre de usuario','class' : 'myForm nameArea'}),
             'texto': forms.Textarea(attrs={'placeholder' : 'Escribe aquí tu comentario', 'class' : 'myForm myTextArea'}),
+            'estrellas' : forms.NumberInput(attrs={'id':'starPoints'})
         }
         labels = {
             'username' : '',
             'texto' : '',
+            'estrellas' : '',
         }
     
     ##username = forms.CharField(max_length=30)

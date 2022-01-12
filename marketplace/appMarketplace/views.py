@@ -55,7 +55,7 @@ class ProductoV(View):
             username = form.cleaned_data['username']
             comentario = form.cleaned_data['texto']
             
-            estrellas = 5
+            estrellas = form.cleaned_data['estrellas']
             productoPk = producto.pk
             val = Valoracion(valoracionId+1 ,productoPk, estrellas, username, comentario)
             val.save()       
