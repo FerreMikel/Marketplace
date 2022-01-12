@@ -54,15 +54,18 @@ class ProductoV(View):
         if(form.is_valid()):
             username = form.cleaned_data['username']
             comentario = form.cleaned_data['texto']
+            
             estrellas = 5
             productoPk = producto.pk
             val = Valoracion(valoracionId+1 ,productoPk, estrellas, username, comentario)
-            val.save()           
+            val.save()       
+                
         
         return render(request, 'product.html',  {'producto': producto, 'imagenes': imagenes, 'caracteristicas': caracteristicas,'valoraciones': valoraciones, 'form': form})
         
 
     def get(self, request, slug_fabricante, slug_producto):
+    
         fabricante = get_object_or_404(Fabricante, slug=slug_fabricante)
         producto = get_object_or_404(
             Producto, slug=slug_producto, fabricante=fabricante.pk)

@@ -192,14 +192,17 @@ button {
 }
 
 /*FORM*/
-#username, #comment{
+.myForm{
   border-radius: 0;
   border: 1px solid #ddde;
   font-family: "Poppins", sans-serif;
+  display: grid;
 }
-#comment{
-  margin-top: 0.5em;
+.nameArea, .myTextArea{
+  margin-top: 1em;
+  padding: 0.5em;
 }
+
 
 .opinion-wrapper{
   margin-top: 20px;

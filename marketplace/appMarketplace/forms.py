@@ -8,4 +8,21 @@ class ValoracionForm(forms.ModelForm):
     class Meta:
         model = Valoracion
         fields = ['username', 'texto']
-        
+        widgets = {
+            'username' : forms.TextInput(attrs={'placeholder' : 'Nombre de usuario','class' : 'myForm nameArea'}),
+            'texto': forms.Textarea(attrs={'placeholder' : 'Escribe aquí tu comentario', 'class' : 'myForm myTextArea'}),
+        }
+        labels = {
+            'username' : '',
+            'texto' : '',
+        }
+    
+    ##username = forms.CharField(max_length=30)
+    ##comentario = forms.CharField(widget=forms.Textarea())
+    ##estrellas = forms.IntegerField()
+    
+    
+   ## class Meta:
+      ##  model = Valoracion
+    ##    fields = ("__all__")
+     
