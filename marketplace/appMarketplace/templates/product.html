@@ -93,7 +93,7 @@
             <div class="opinion-wrapper">
                 <div class="name-star-wrapper">
                     <h4>{{valoracion.username}}</h4>
-                    <span>{{valoracion.estrellas}} <i class="rating__icon rating__icon--star fa fa-star"></i></span>
+                    <span>{%for i in  "x"|ljust:valoracion.estrellas%} <i class="rating__icon rating__icon--star fa fa-star"></i>{% endfor %}</span>
                 </div>
                 <p>{{valoracion.texto}}</p>
             </div>
