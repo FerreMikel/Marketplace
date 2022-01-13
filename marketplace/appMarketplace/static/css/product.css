@@ -1,273 +1,288 @@
 .grid-view {
-  display: grid;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-  grid-column-gap: 3em;
-  height: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    grid-column-gap: 3em;
+    height: 100%;
 }
 
 .image-carousel {
-  width: 100%
+    width: 100%
 }
 
 #carousel-selected {
-  width: 100%;
-  padding-top: 70%;
-  background-image: none;
-  background-size: cover;
-  background-position: center;
+    width: 100%;
+    padding-top: 70%;
+    background-image: none;
+    background-size: cover;
+    background-position: center;
 }
 
 .carousel-thumnails {
-  display: flex;
-  flex-direction: row;
-  justify-content: left;
-  overflow-x: auto;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  margin-top: 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    overflow-x: auto;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-top: 1em;
 }
 
 .carousel-thumbnail {
-  height: 100px;
-  opacity: 0.7;
-  transition: opacity 200ms ease-in;
+    height: 100px;
+    opacity: 0.7;
+    transition: opacity 200ms ease-in;
 }
 
 .active-thumbnail {
-  opacity: 1;
+    opacity: 1;
 }
 
 .product-info {
-  margin-left: 2em;
-  padding: 2em 1em;
+    margin-left: 2em;
+    padding: 2em 1em;
 }
 
 .product-info h1 {
-  font-size: 300%;
-  padding: 0;
-  margin: 0.5em 0;
-  line-height: 0.95;
+    font-size: 300%;
+    padding: 0;
+    margin: 0.5em 0;
+    line-height: 0.95;
 }
 
 .categoria-producto {
-  background-color: var(--primary-color);
-  color: #fff;
-  width: fit-content;
-  margin-bottom: 1em;
-  padding: 5px 10px;
-  text-decoration: none;
+    background-color: var(--primary-color);
+    color: #fff;
+    width: fit-content;
+    margin-bottom: 1em;
+    padding: 5px 10px;
+    text-decoration: none;
 }
 
 .caracteristicas-wrapper {
-  padding: 0;
-  margin: 0;
+    padding: 0;
+    margin: 0;
 }
 
 .caracteristicas-items {
-  list-style-type: none;
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0;
-  width: 70%
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    width: 70%
 }
 
 .caracteristicas-items li {
-  background-color: #ddde;
-  width: fit-content;
-  margin: 0.5em;
-  padding: 6px;
-  font-size: smaller;
+    background-color: #ddde;
+    width: fit-content;
+    margin: 0.5em;
+    padding: 6px;
+    font-size: smaller;
 }
 
 .fabricante {
-  margin-top: 2em;
+    margin-top: 2em;
 }
 
 .fabricante h4 {
-  font-size: larger;
-  margin: 0 1em 0 0;
+    font-size: larger;
+    margin: 0 1em 0 0;
 }
 
 .fabricante img {
-  width: 100%;
-  margin: 1em 0;
+    width: 100%;
+    margin: 1em 0;
 }
 
 .fab-logo-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  margin-bottom: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 1em;
 }
 
 .fabricante a {
-  text-decoration: none;
-  width: 30%;
+    text-decoration: none;
+    width: 30%;
 }
 
 .fabricante p {
-  text-align: justify;
-  margin-right: 1.5em;
-  max-width: 55ch;
+    text-align: justify;
+    margin-right: 1.5em;
+    max-width: 55ch;
 }
 
 .buy {
-  display: grid;
-
+    display: grid;
 }
 
 .select-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  vertical-align: middle;
-
+    display: flex;
+    flex-wrap: wrap;
+    vertical-align: middle;
 }
 
 .qty-wrapper,
 .size-wrapper {
-
-  flex: 0 1 45%;
-  margin: 0.5em;
+    flex: 0 1 45%;
+    margin: 0.5em;
 }
 
 select {
-  width: 10em;
-  height: 2em;
-  border: 1px solid #ddde;
-  font-family: "Poppins", sans-serif;
+    width: 10em;
+    height: 2em;
+    border: 1px solid #ddde;
+    font-family: "Poppins", sans-serif;
 }
 
 button {
-  width: 10em;
-  height: 3em;
-  margin-top: 1em;
-  font-family: "Poppins", sans-serif;
+    width: 10em;
+    height: 3em;
+    margin-top: 1em;
+    font-family: "Poppins", sans-serif;
 }
-
 
 
 /* STAR RATING */
+
 .rating-group {
-  display: inline-flex;
+    display: inline-flex;
 }
+
 
 /* make hover effect work properly in IE */
+
 .rating__icon {
-  pointer-events: none;
+    pointer-events: none;
 }
+
 
 /* hide radio inputs */
+
 .rating__input {
- position: absolute !important;
- left: -9999px !important;
+    position: absolute !important;
+    left: -9999px !important;
 }
+
 
 /* hide 'none' input from screenreaders */
+
 .rating__input--none {
-  display: none
+    display: none
 }
+
 
 /* set icon padding and size */
+
 .rating__label {
-  cursor: pointer;
-  padding: 0 0.1em;
-  font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0 0.1em;
+    font-size: 1.5rem;
 }
+
 
 /* set default star color */
+
 .rating__icon--star {
-  color: orange;
+    color: orange;
 }
+
 
 /* if any input is checked, make its following siblings grey */
-.rating__input:checked ~ .rating__label .rating__icon--star {
-  color: #ddd;
+
+.rating__input:checked~.rating__label .rating__icon--star {
+    color: #ddd;
 }
+
 
 /* make all stars orange on rating group hover */
+
 .rating-group:hover .rating__label .rating__icon--star {
-  color: orange;
+    color: orange;
 }
+
 
 /* make hovered input's following siblings grey on hover */
-.rating__input:hover ~ .rating__label .rating__icon--star {
-  color: #ddd;
-}
 
+.rating__input:hover~.rating__label .rating__icon--star {
+    color: #ddd;
+}
 
 
 /*FORM*/
-.form{
-  padding-left: 1em;
+
+.form {
+    padding-left: 1em;
 }
-.myForm{
-  border-radius: 0;
-  border: 1px solid #ddde;
-  font-family: "Poppins", sans-serif;
-  display: grid;
-  
+
+.myForm {
+    border-radius: 0;
+    border: 1px solid #ddde;
+    font-family: "Poppins", sans-serif;
+    display: grid;
 }
-.nameArea, .myTextArea{
-  margin-top: 1em;
-  padding: 0.5em;
+
+.myTextArea {
+    width: 100%;
+}
+
+.nameArea,
+.myTextArea {
+    margin-top: 1em;
+    padding: 0.5em;
+}
+
+.opinion-wrapper {
+    margin-top: 20px;
+    padding: 0.75em;
+    border-bottom: 1px solid #ddde;
+    /* background-color: rgb(250, 250, 250);*/
+}
+
+.name-star-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: -20px;
+}
+
+.name-star-wrapper h4 {
+    margin-right: 1em;
+}
+
+#starPoints {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+.customer-opinions {
+    padding-left: 1em;
 }
 
 
-.opinion-wrapper{
-  margin-top: 20px;
-  padding: 0.75em;
-  border-bottom: 1px solid #ddde;
- /* background-color: rgb(250, 250, 250);*/
-}
-
-.name-star-wrapper{
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  margin-bottom: -20px;
-  
-}
-.name-star-wrapper h4{
-  margin-right: 1em;
-}
-#starPoints{
-  height: 0;
-  width: 0;
-  visibility: hidden;
-}
-
-.customer-opinions{
-  padding-left: 1em;
-}
 /* DESKTOP */
 
 @media only screen and (min-width: 768px) {
-  .grid-view {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  select {
-    width: 15em;
-  }
-
-  .size-wrapper,
-  .qty-wrapper {
-    display: grid;
-  }
-
-  button {
-    width: 15em;
-  }
-
-  .opinions-all{
-    margin-left: auto;
-    display: grid;
-    grid-template-columns: minmax(150px, 45%) 1fr;    
-    grid-column-gap: 7em;
-  }
-  .opinion-wrapper{
-    max-width:480px ;
-  }
-  
-
+    .grid-view {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    select {
+        width: 15em;
+    }
+    .size-wrapper,
+    .qty-wrapper {
+        display: grid;
+    }
+    button {
+        width: 15em;
+    }
+    .opinions-all {
+        margin-left: auto;
+        display: grid;
+        grid-template-columns: minmax(150px, 45%) 1fr;
+        grid-column-gap: 7em;
+    }
+    .opinion-wrapper {
+        max-width: 480px;
+    }
 }

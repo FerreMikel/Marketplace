@@ -1,63 +1,54 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% load static %} {% block title %}{{producto.nombre}}{% endblock %} {% block head %}
+<link rel="stylesheet" href="{% static 'css/product.css' %}" />
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/emptyForm.js' %}"></script>
 
-{% load static %}
+{% endblock %} {% block content %}
 
-{% block title %}{{producto.nombre}}{% endblock %}
-
-{% block head %}
-    <link rel="stylesheet" href="{% static 'css/product.css' %}" />
-    <script src="{% static 'js/jquery.js' %}"></script>
-    <script src="{% static 'js/emptyForm.js' %}"></script>
-
-{% endblock %}
-
-{% block content %}
-    
-    <div class="grid-view">
-        <div class="image-carousel">
-            <div id="carousel-selected"></div>
-            <div class="carousel-thumnails">
-                {% for image in imagenes %}
-                    <img src="{{ image.url }}" class="carousel-thumbnail"/>
-                {% endfor %}
-            </div>  
+<div class="grid-view">
+    <div class="image-carousel">
+        <div id="carousel-selected"></div>
+        <div class="carousel-thumnails">
+            {% for image in imagenes %}
+            <img src="{{ image.url }}" class="carousel-thumbnail" /> {% endfor %}
         </div>
-        <script src="{% static 'js/slide.js' %}"></script>
-        <div class="product-info">
-            <a href="/categorias/{{producto.categoria.slug}}" class="categoria-producto">{{producto.categoria.nombre}}</a>
-            <h1>{{producto.fabricante.nombre}} {{producto.nombre}}</h1>
-            <h3>Precio: {{producto.precio}} €</h3>
-            <ul class="caracteristicas-wrapper">
-                <h4>Características</h4>
-                <div class="caracteristicas-items">
-                    {% for caracteristica in caracteristicas %}
-                        <li>{{caracteristica.nombre}}</li>
-                    {% endfor %}
-                </div>
-            </ul>
-            <div class="fabricante">
-                <div class="fab-logo-wrapper">
-                    <h4>El fabricante</h4>
-                    <a href="/{{producto.fabricante.slug}}"><img src="{{producto.fabricante.logoURL}}" alt=""></a>
-                </div>
-                <span><b>Sitio web</b> <a target="_blank" href="{{producto.fabricante.sitioWeb}}">{{producto.fabricante.sitioWeb}}</a></span>
-                <p>{{producto.fabricante.descripcion}}</p>
-                
+    </div>
+    <script src="{% static 'js/slide.js' %}"></script>
+    <div class="product-info">
+        <a href="/categorias/{{producto.categoria.slug}}" class="categoria-producto">{{producto.categoria.nombre}}</a>
+        <h1>{{producto.fabricante.nombre}} {{producto.nombre}}</h1>
+        <h3>Precio: {{producto.precio}} €</h3>
+        <ul class="caracteristicas-wrapper">
+            <h4>Características</h4>
+            <div class="caracteristicas-items">
+                {% for caracteristica in caracteristicas %}
+                <li>{{caracteristica.nombre}}</li>
+                {% endfor %}
             </div>
-            <div class="buy">
-                <div class="select-wrapper">
-                    <div class="size-wrapper">
-                        <span>Talla</span>
-                        <select name="Talla" id="talla-select">
+        </ul>
+        <div class="fabricante">
+            <div class="fab-logo-wrapper">
+                <h4>El fabricante</h4>
+                <a href="/{{producto.fabricante.slug}}"><img src="{{producto.fabricante.logoURL}}" alt=""></a>
+            </div>
+            <span><b>Sitio web</b> <a target="_blank" href="{{producto.fabricante.sitioWeb}}">{{producto.fabricante.sitioWeb}}</a></span>
+            <p>{{producto.fabricante.descripcion}}</p>
+
+        </div>
+        <div class="buy">
+            <div class="select-wrapper">
+                <div class="size-wrapper">
+                    <span>Talla</span>
+                    <select name="Talla" id="talla-select">
                             <option  type="select" disabled="disabled" value="">Por favor, selecciona</option>
                             <option  type="select" value="S">S</option>
                             <option  type="select" value="M">M</option>
                             <option  type="select" value="L">L</option>
                         </select>
-                    </div>
-                    <div class="qty-wrapper">
-                        <span>Cantidad</span>
-                        <select name="cantidad" id="cantidad-select">
+                </div>
+                <div class="qty-wrapper">
+                    <span>Cantidad</span>
+                    <select name="cantidad" id="cantidad-select">
                             <option disabled="disabled" value="">Cantidad</option>
                             <option  type="select" value="1">1</option>
                             <option  type="select" value="2">2</option>
@@ -66,65 +57,56 @@
                             <option  type="select" value="5">5</option>
                             <option  type="select" value="6">6</option>
                         </select>
-                    </div>
                 </div>
-                <button disabled>Añadir al carrito</button>
             </div>
-            
+            <button disabled>Añadir al carrito</button>
         </div>
+
     </div>
-    <div class="opinions-all">
-        <div class="form">
-            <h4>Déjanos tu opinión</h4>
-            <div class="rating">
-                <div class="rating-group">
-                    <input disabled checked class="rating__input rating__input--none" name="rating3" id="rating3-none" value="0" type="radio">
-                    <label aria-label="1 star" class="rating__label 1" for="rating3-1"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
-                    <input class="rating__input" name="rating3" id="rating3-1" value="1" type="radio">
-                    <label aria-label="2 stars" class="rating__label 2" for="rating3-2"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
-                    <input class="rating__input" name="rating3" id="rating3-2" value="2" type="radio">
-                    <label aria-label="3 stars" class="rating__label 3" for="rating3-3"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
-                    <input class="rating__input" name="rating3" id="rating3-3" value="3" type="radio">
-                    <label aria-label="4 stars" class="rating__label 4" for="rating3-4"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
-                    <input class="rating__input" name="rating3" id="rating3-4" value="4" type="radio">
-                    <label aria-label="5 stars" class="rating__label 5" for="rating3-5"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
-                    <input class="rating__input" name="rating3" id="rating3-5" value="5" type="radio">
-                </div>
+</div>
+<div class="opinions-all">
+    <div class="form">
+        <h4>Déjanos tu opinión</h4>
+        <div class="rating">
+            <div class="rating-group">
+                <input disabled checked class="rating__input rating__input--none" name="rating3" id="rating3-none" value="0" type="radio">
+                <label aria-label="1 star" class="rating__label 1" for="rating3-1"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                <input class="rating__input" name="rating3" id="rating3-1" value="1" type="radio">
+                <label aria-label="2 stars" class="rating__label 2" for="rating3-2"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                <input class="rating__input" name="rating3" id="rating3-2" value="2" type="radio">
+                <label aria-label="3 stars" class="rating__label 3" for="rating3-3"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                <input class="rating__input" name="rating3" id="rating3-3" value="3" type="radio">
+                <label aria-label="4 stars" class="rating__label 4" for="rating3-4"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                <input class="rating__input" name="rating3" id="rating3-4" value="4" type="radio">
+                <label aria-label="5 stars" class="rating__label 5" for="rating3-5"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                <input class="rating__input" name="rating3" id="rating3-5" value="5" type="radio">
             </div>
-            <form method="POST">
-                {% csrf_token %}
-                
-                {{form}}                      
-                <button type="submit" id="btnEnviar">Enviar</button>
-            </form>                    
         </div>
-        <div class="customers-wrapper">
-            {% for valoracion in valoraciones%}
-            <div class="customer-opinions">
-                <div class="opinion-wrapper">
-                    <div class="name-star-wrapper">
-                        <h4>{{valoracion.username}}</h4>
-                        <span>{{valoracion.estrellas}} <i class="rating__icon rating__icon--star fa fa-star"></i></span>
-                    </div>
-                    <p>{{valoracion.texto}}</p>
-                </div>
-            </div>
-            {% endfor %}
-        </div>                
+        <form method="POST">
+            {% csrf_token %} {{form}}
+            <button type="submit" id="btnEnviar">Enviar</button>
+        </form>
     </div>
-    <script>
-        if($(window).width() >= 768){
-            $(".myTextArea").attr('cols', 70)
-            
-        }
-        
-        $(".rating__label").click(function(){
-            var estrellas = $(this).attr('class').split(' ')[1]
-            console.log("a" + estrellas)
-            $("#starPoints").val(estrellas)
-            console.log($("#starPoints").val())
-        })
-        
-        
-    </script>
+    <div class="customers-wrapper">
+        {% for valoracion in valoraciones%}
+        <div class="customer-opinions">
+            <div class="opinion-wrapper">
+                <div class="name-star-wrapper">
+                    <h4>{{valoracion.username}}</h4>
+                    <span>{{valoracion.estrellas}} <i class="rating__icon rating__icon--star fa fa-star"></i></span>
+                </div>
+                <p>{{valoracion.texto}}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<script>
+    $(".rating__label").click(function() {
+        var estrellas = $(this).attr('class').split(' ')[1]
+        console.log("a" + estrellas)
+        $("#starPoints").val(estrellas)
+        console.log($("#starPoints").val())
+    })
+</script>
 {% endblock %}
